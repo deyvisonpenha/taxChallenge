@@ -21,3 +21,13 @@ or
 ```
 yarn global add jest
 ```
+
+After that step you can run:
+
+```
+npm run test
+```
+or
+```
+yarn test
+```
