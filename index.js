@@ -5,24 +5,14 @@
 */
 const input = [{
   amount: 1,
+  type: ['imported', 'food'],
+  productName: 'box of chocolates',
+  price: 10.00
+}, {
+  amount: 1,
   type: ['imported'],
   productName: 'bottle of perfume',
-  price: 27.99
-}, {
-  amount: 1,
-  type: ['perfume'],
-  productName: 'bottle of perfume',
-  price: 18.99
-}, {
-  amount: 1,
-  type: ['medical'],
-  productName: 'packet of headache pills',
-  price: 9.75
-}, {
-  amount: 3,
-  type: ['imported', 'food'],
-  productName: 'boxes of chocolates',
-  price: 11.25
+  price: 47.50
 }];
 
 /* create a function called shoppingBaskets that will receive this input */
@@ -32,19 +22,19 @@ function shoppingBaskets(input) {
 
   /* will map all input Items and calculate the appropriate tax */
   var output = input.map(function(item) {
-    let taxITem = 0;
+    let totalTaxITem = 0;
     
     if (!item.type.includes('food') && !item.type.includes('book') && !item.type.includes('medical')) {
-      taxITem = parseFloat((item.price*0.1).toFixed(2));
+      totalTaxITem = parseFloat((item.price*0.1).toFixed(2));
     }
     if (item.type.includes('imported')) {
-      taxITem = parseFloat((taxITem+item.price*0.05).toFixed(2));
+      totalTaxITem = parseFloat((totalTaxITem+(item.price*0.05)).toFixed(2));
     }
 
-    const totalItemPrice = parseFloat((item.price + taxITem).toFixed(2))*item.amount;
+    const totalItemPrice = parseFloat((item.price + totalTaxITem).toFixed(2))*item.amount;
     total = parseFloat((totalItemPrice+total).toFixed(2));
     item.price = totalItemPrice;
-    salesTaxes = parseFloat((salesTaxes + taxITem).toFixed(2));
+    salesTaxes = parseFloat((salesTaxes + totalTaxITem).toFixed(2));
     
     return item;
   });
