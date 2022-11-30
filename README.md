@@ -11,4 +11,13 @@ You need to have installed NodeJs and be in the same folder (in terminal), and r
 node index.js
 ```
 
+## Test Plan
+To execute the test file first you need to install globally Jest with: 
 
+```
+npm install -g jest
+```
+or
+```
+yarn global add jest
+```

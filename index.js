@@ -3,26 +3,26 @@
   contains an object with the following fields: amount as number, 
   type as string, productName as string, price as number 
 */
-var input = [{
+const input = [{
   amount: 1,
-  type: 'book',
-  productName: 'book',
-  price: 12.49
-}, {
-  amount: 1,
-  type: 'music CD',
-  productName: 'music CD',
-  price: 14.99
-}, {
-  amount: 1,
-  type: 'food',
-  productName: 'chocolate bar',
-  price: 0.85
-}, {
-  amount: 1,
-  type: 'imported',
+  type: ['imported'],
   productName: 'bottle of perfume',
   price: 27.99
+}, {
+  amount: 1,
+  type: ['perfume'],
+  productName: 'bottle of perfume',
+  price: 18.99
+}, {
+  amount: 1,
+  type: ['medical'],
+  productName: 'packet of headache pills',
+  price: 9.75
+}, {
+  amount: 3,
+  type: ['imported', 'food'],
+  productName: 'boxes of chocolates',
+  price: 11.25
 }];
 
 /* create a function called shoppingBaskets that will receive this input */
@@ -34,21 +34,23 @@ function shoppingBaskets(input) {
   var output = input.map(function(item) {
     let taxITem = 0;
     
-    if (item.type !== 'food' && item.type !== 'book' && item.type !== 'medical' && item.type !== 'imported') {
+    if (!item.type.includes('food') && !item.type.includes('book') && !item.type.includes('medical')) {
       taxITem = parseFloat((item.price*0.1).toFixed(2));
     }
-    if (item.type === 'imported') {
-      taxITem =  parseFloat((item.price*0.05).toFixed(2));
+    if (item.type.includes('imported')) {
+      taxITem = parseFloat((taxITem+item.price*0.05).toFixed(2));
     }
 
-    const totalItemPrice = parseFloat((item.price + taxITem).toFixed(2));
-    total += totalItemPrice;
+    const totalItemPrice = parseFloat((item.price + taxITem).toFixed(2))*item.amount;
+    total = parseFloat((totalItemPrice+total).toFixed(2));
     item.price = totalItemPrice;
-    salesTaxes += taxITem;
+    salesTaxes = parseFloat((salesTaxes + taxITem).toFixed(2));
     
     return item;
   });
-  return ({...output,salesTaxes, total})
+  return ({items: output, salesTaxes, total})
 }
 
 console.log("receipt detail",shoppingBaskets(input))
+
+module.exports = shoppingBaskets;

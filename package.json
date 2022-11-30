@@ -1,0 +1,19 @@
+{
+  "name": "torc-challenge",
+  "version": "1.0.0",
+  "description": "This is my solution for a Torc's challenge made in javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deyvisonpenha/torcChallenge.git"
+  },
+  "author": "Deyvison Penha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deyvisonpenha/torcChallenge/issues"
+  },
+  "homepage": "https://github.com/deyvisonpenha/torcChallenge#readme"
+}
