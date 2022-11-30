@@ -43,3 +43,4 @@ When I purchase items I receive a receipt which lists the name of all the items 
 
 
 Write an application that prints out the receipt details for these shopping baskets
+```
