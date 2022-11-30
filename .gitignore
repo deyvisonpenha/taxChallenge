@@ -1,0 +1,6 @@
+# avoid node_modules folder
+node_modules
+
+#avoid file versions form yarn or npm
+yarn.lock
+package-lock.json

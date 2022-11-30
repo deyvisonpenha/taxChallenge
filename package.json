@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/deyvisonpenha/torcChallenge/issues"
   },
-  "homepage": "https://github.com/deyvisonpenha/torcChallenge#readme"
+  "homepage": "https://github.com/deyvisonpenha/torcChallenge#readme",
+  "dependencies": {
+    "jest": "^29.3.1"
+  }
 }
