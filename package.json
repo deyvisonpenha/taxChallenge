@@ -4,7 +4,8 @@
   "description": "This is my solution for a Torc's challenge made in javascript.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
