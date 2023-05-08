@@ -1,4 +1,4 @@
-# torc Challenge
+# Challenge
 This is my solution for a challenge made in javascript.
 
 In the index.js is imported the inputs ( that have all mocked data) and the function 'calculateSalesTaxAndTota' that have all the logical handle the problem.
